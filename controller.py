@@ -22,13 +22,13 @@ def book():
             else:
                 time.sleep(2)
                 c=ui.search_submenu()
-            if c==1:
-                log.log('Удаление контакта',f'{contact}')
-                o.del_phone_number(contact)
-            else:
-                new_contact=ui.input_new_contact()
-                o.replace_phone_contact(contact,new_contact)
-                log.log(f'Контакт {contact}',f'Изменен на {new_contact}')
+                if c==1:
+                    log.log('Удаление контакта',f'{contact}')
+                    o.del_phone_number(contact)
+                else:
+                    new_contact=ui.input_new_contact()
+                    o.replace_phone_contact(contact,new_contact)
+                    log.log(f'Контакт {contact}',f'Изменен на {new_contact}')
         elif command == 3:
             contact=ui.input_new_contact()
             o.save_phone_number(contact)
