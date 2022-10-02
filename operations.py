@@ -21,14 +21,12 @@ def search_contact(contact):
     Ищет контакт по запросу
     """
     with open(t, 'r', encoding='utf-8') as f:
+        search_contact =''
         for line in f:
             if contact in line:
                 print(line)
-                contact = line
-            else:
-                contact = ''
-            break
-        return contact
+                search_contact = line
+        return search_contact
 
 
 def replace_phone_contact(contact, new_contact):
